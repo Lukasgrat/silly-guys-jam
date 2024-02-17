@@ -21,7 +21,10 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI sillies;
     float attackTimer;
     const float MELEECOOLDOWN = 1f;
+    const float RANGEDCOOLDOWN = 1f;
     public GameObject meleeWeapon;
+    public Transform firePoint;
+    public GameObject bulletPref;
     // Start is called before the first frame update
     void Start()
     {
@@ -101,6 +104,27 @@ public class PlayerController : MonoBehaviour
             this.meleeWeapon.SetActive(false);
         }
 
+    }
+    //handles ranged weapon
+    private void rangedHandler()
+    {
+        if (this.attackTimer == 0 && Input.GetButtonDown("Fire1"))
+        {
+            this.attackTimer = RANGEDCOOLDOWN;
+            Instantiate(bulletPref, firePoint.position, firePoint.rotation);
+        }
+        else if (this.attackTimer - Time.deltaTime < 0)
+        {
+            this.attackTimer = 0;
+        }
+        else
+        {
+            this.attackTimer -= Time.deltaTime;
+        }
+        if (this.attackTimer < RANGEDCOOLDOWN / 3)
+        {
+            this.meleeWeapon.SetActive(false);
+        }
     }
     //handles the resistance calculations based on the force of this object
     private Vector2 resistanceHandler() {
