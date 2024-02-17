@@ -10,7 +10,9 @@ public class bulletCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb2d.velocity = transform.right * speed;
+        Vector2 vec2 = new Vector2(Mathf.Cos(Mathf.Deg2Rad * transform.rotation.eulerAngles.z),
+            Mathf.Sin(Mathf.Deg2Rad * transform.rotation.eulerAngles.z));
+        rb2d.velocity = vec2 * speed;
     }
 
     // Update is called once per frame

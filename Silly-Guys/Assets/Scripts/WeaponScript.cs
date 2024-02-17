@@ -6,7 +6,6 @@ public class WeaponScript : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPref;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +22,14 @@ public class WeaponScript : MonoBehaviour
 
     void Shoot()
     {
-       //shoot logic
-       Instantiate(bulletPref, firePoint.position, firePoint.rotation);
+        //shoot logic
+        if (transform.localScale.x < 0)
+        {
+            Instantiate(bulletPref, firePoint.position, Quaternion.Euler(0,0, 180));
+        }
+        else
+        {
+            Instantiate(bulletPref, firePoint.position, Quaternion.Euler(0, 0, 0));
+        }
     }
 }
