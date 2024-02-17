@@ -19,6 +19,7 @@ public class DoorScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("here");
         if (collision.gameObject.name == "Player" && collision.gameObject.GetComponent<PlayerController>().getSavedAmounts() >= silliesNeeded)
         {
             door.SetActive(false);
