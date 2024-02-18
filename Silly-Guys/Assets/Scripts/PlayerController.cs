@@ -58,7 +58,9 @@ public class PlayerController : MonoBehaviour
 
     //EFFECT:Sets the player as fully active again and sends them to their prior spawn point
     private void respawnHandler() {
-        this.transform.position = respawn.transform.position;
+        this.transform.position = new Vector3(respawn.transform.position.x,
+            respawn.transform.position.y,
+            0);
         this.isLocked = false;
         this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         this.deathScreen.SetActive(false);
