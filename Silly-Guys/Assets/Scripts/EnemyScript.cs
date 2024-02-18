@@ -10,6 +10,7 @@ public class EnemyScript : MonoBehaviour
     public float attackRadius;
     public float moveSpeed;
     public Boolean isSerious;
+    public Sprite sillySprite;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,9 @@ public class EnemyScript : MonoBehaviour
                     currentPos.y,
                     currentPos.z
                     );
+                transform.localScale = new Vector3(-1 * Mathf.Abs(this.transform.localScale.x),
+                    this.transform.localScale.y,
+                    this.transform.localScale.z);
             }
             else if (player.transform.position.x < currentPos.x)
             {
@@ -43,6 +47,9 @@ public class EnemyScript : MonoBehaviour
                         currentPos.y,
                         currentPos.z
                         );
+                transform.localScale = new Vector3(Mathf.Abs(this.transform.localScale.x),
+                    this.transform.localScale.y,
+                    this.transform.localScale.z);
             }
         }
     }
@@ -50,7 +57,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (isSerious) { 
             isSerious = false;
-            this.GetComponent<SpriteRenderer>().color = Color.green;
+            this.GetComponent<SpriteRenderer>().sprite = this.sillySprite;
             this.player.GetComponent<PlayerController>().increaseSillyAmounts(1);
         }
     }

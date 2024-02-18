@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         this.isLocked = false;
         this.deathScreen.SetActive(false);
         attackTimer = 0f;
-        this.meleeWeapon.SetActive(false);
+        this.meleeWeapon.SetActive(true);
     }
 
     // Update is called once per frame
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         if (!this.isLocked)
         {
             movementHandler();
-            meleeHandler();
+            //meleeHandler();
         }
     }
 
