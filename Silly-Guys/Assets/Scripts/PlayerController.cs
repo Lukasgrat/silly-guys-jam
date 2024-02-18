@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public GameObject meleeWeapon;
     public Transform firePoint;
     public GameObject bulletPref;
+    public GameObject respawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R)) {
+            respawnHandler(); 
+        } 
         Boolean jumpKey = (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow));
         if (jumpKey && !isInAir)
         {
@@ -49,9 +53,18 @@ public class PlayerController : MonoBehaviour
         {
             movementHandler();
             meleeHandler();
-
         }
     }
+
+    //EFFECT:Sets the player as fully active again and sends them to their prior spawn point
+    private void respawnHandler() {
+        this.transform.position = respawn.transform.position;
+        this.isLocked = false;
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        this.deathScreen.SetActive(false);
+    }
+
+
     //EFFECT: adds force to the player
     //handles movement inputs and redirects for resistances
     private void movementHandler() 
@@ -61,31 +74,18 @@ public class PlayerController : MonoBehaviour
         {
             rb2D.AddForce(horizontalMovement);
             this.transform.localScale = new Vector3(1,1,1);
-            if (false)//this.playerCamera.transform.position.x > -1)
-            {
-                this.playerCamera.transform.position = new Vector3(
-                    this.playerCamera.transform.position.x - .05f,
-                    this.playerCamera.transform.position.y,
-                    this.playerCamera.transform.position.z);
-            }
         }
         else if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && maxMovement * -1 < rb2D.totalForce.x)
         {
             rb2D.AddForce(horizontalMovement * -1);
             this.transform.localScale = new Vector3( -1, 1,1);
-            if (false)//this.playerCamera.transform.position.x < 1)
-            {
-                this.playerCamera.transform.position = new Vector3(
-                    this.playerCamera.transform.position.x + .05f,
-                    this.playerCamera.transform.position.y,
-                    this.playerCamera.transform.position.z);
-            }
         }
         else
         {
             rb2D.AddForce(resistanceHandler());
         }
     }
+
     //handles melee hits
     private void meleeHandler() {
         if (this.attackTimer == 0 && Input.GetKeyDown(KeyCode.S))
@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
     }
     //handles the resistance calculations based on the force of this object
     private Vector2 resistanceHandler() {
-        int RESISTANCE = 40;
+        int RESISTANCE = 30;
         Vector2 dir;
         if (rb2D.totalForce.x > 0)
         {
@@ -179,7 +179,8 @@ public class PlayerController : MonoBehaviour
     }
     public void death() 
     {
-        this.gameObject.SetActive(false);
         this.deathScreen.SetActive(true);
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.gray;
+        this.isLocked = true;
     }
 }
