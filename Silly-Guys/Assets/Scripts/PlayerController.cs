@@ -11,13 +11,15 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2D;
     private Boolean isInAir;
+    bool isLocked;
+    [Header("Movement Values")]
     public float jumpHeight;
     public float movementSpeed;
     public float maxMovement;
     public GameObject playerCamera;
+    [Header("Enemy Interactions")]
     public int silliesSaved;
     public GameObject deathScreen;
-    bool isLocked;
     public TextMeshProUGUI sillies;
     float attackTimer;
     const float MELEECOOLDOWN = 1f;
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
         if (jumpKey && !isInAir)
         {
             rb2D.AddForce(new Vector2(0f, jumpHeight * 100));
+            this.gameObject.GetComponent<AudioSource>().Play();
             isInAir = true;
         }
         if (!this.isLocked)

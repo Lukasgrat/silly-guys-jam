@@ -6,6 +6,7 @@ public class WeaponScript : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPref;
+    public AudioSource shootingSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class WeaponScript : MonoBehaviour
 
     void Shoot()
     {
+        shootingSound.Play();
         //shoot logic
         if (transform.localScale.x < 0)
         {

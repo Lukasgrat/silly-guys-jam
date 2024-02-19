@@ -11,10 +11,18 @@ public class EnemyScript : MonoBehaviour
     public float moveSpeed;
     public Boolean isSerious;
     public Sprite sillySprite;
+    AudioSource m_MyAudioSource;
+    //Play the music
+    //Detect when you use the toggle, ensures music isn’t played multiple times
+    bool m_ToggleChange;
 
     // Start is called before the first frame update
     void Start()
-    {       
+    {
+        //Fetch the AudioSource from the GameObject
+        m_MyAudioSource = GetComponent<AudioSource>();
+        //Ensure the toggle is set to true for the music to play at start-up
+        this.m_ToggleChange = true;
     }
 
     // Update is called once per frame
@@ -51,6 +59,21 @@ public class EnemyScript : MonoBehaviour
                     this.transform.localScale.y,
                     this.transform.localScale.z);
             }
+            audioHandler();
+        }
+        else 
+        {
+            m_ToggleChange = true;
+        }
+    }
+    private void audioHandler()
+    {
+        Debug.Log("here");
+        //Check to see if you just set the toggle to positive
+        if (!m_MyAudioSource.isPlaying && m_ToggleChange)
+        {
+            m_MyAudioSource.Play();
+            m_ToggleChange = false;
         }
     }
     public void sillyHandler()

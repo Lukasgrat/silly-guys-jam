@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 321215389001836294}
   - component: {fileID: 1708637370842618504}
   - component: {fileID: 9092116734709106923}
-  - component: {fileID: 2435910298562041193}
   - component: {fileID: 7062900950090639247}
+  - component: {fileID: 5266813852107391593}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 5563053979217018610}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.59892005, y: -0.33063, z: 1}
+  m_LocalPosition: {x: -3.8032, y: 1.205, z: 0}
+  m_LocalScale: {x: -0.09184175, y: -0.0896338, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25d66858623317844818098fdf4f60cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,8 +114,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &2435910298562041193
-CircleCollider2D:
+--- !u!114 &7062900950090639247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5563053979217018610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef75e589a1ff30d4e920d29e0d37371b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  rb2d: {fileID: 9092116734709106923}
+--- !u!68 &5266813852107391593
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -147,19 +161,20 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &7062900950090639247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5563053979217018610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef75e589a1ff30d4e920d29e0d37371b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  rb2d: {fileID: 9092116734709106923}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -3.3585303, y: -0.18793043}
+  - {x: -2.3497634, y: -2.5769117}
+  - {x: -0.098695695, y: -3.4439514}
+  - {x: 2.1362095, y: -2.4849412}
+  - {x: 2.905201, y: -0.04748726}
+  - {x: 2.0721579, y: 2.2113957}
+  - {x: 0.90140206, y: 2.8535373}
+  - {x: -0.090673365, y: 3.0489044}
+  - {x: -1.3817234, y: 2.9649332}
+  - {x: -2.2814708, y: 2.3229828}
+  - {x: -3.296881, y: -0.041502714}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
