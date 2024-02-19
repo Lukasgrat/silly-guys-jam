@@ -78,12 +78,12 @@ public class PlayerController : MonoBehaviour
         if ((Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && maxMovement > rb2D.totalForce.x)
         {
             rb2D.AddForce(horizontalMovement);
-            this.transform.localScale = new Vector3(1,1,1);
+            this.transform.localScale = new Vector3(Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y, 1);
         }
         else if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && maxMovement * -1 < rb2D.totalForce.x)
         {
             rb2D.AddForce(horizontalMovement * -1);
-            this.transform.localScale = new Vector3( -1, 1,1);
+            this.transform.localScale = new Vector3(Mathf.Abs(this.transform.localScale.x) * -1, this.transform.localScale.y, 1);
         }
         else
         {
