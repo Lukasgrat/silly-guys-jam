@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
         this.deathScreen.SetActive(false);
         attackTimer = 0f;
         this.meleeWeapon.SetActive(true);
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
@@ -74,7 +75,8 @@ public class PlayerController : MonoBehaviour
     //handles movement inputs and redirects for resistances
     private void movementHandler() 
     {
-        Vector2 horizontalMovement = new Vector2(movementSpeed, 0f);
+        Vector2 horizontalMovement = new Vector2(movementSpeed * Time.deltaTime * 50, 0f);
+        Debug.Log(Time.deltaTime*1000);
         if ((Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && maxMovement > rb2D.totalForce.x)
         {
             rb2D.AddForce(horizontalMovement);
