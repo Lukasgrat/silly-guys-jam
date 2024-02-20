@@ -76,7 +76,6 @@ public class PlayerController : MonoBehaviour
     private void movementHandler() 
     {
         Vector2 horizontalMovement = new Vector2(movementSpeed * Time.deltaTime * 50, 0f);
-        Debug.Log(Time.deltaTime*1000);
         if ((Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && maxMovement > rb2D.totalForce.x)
         {
             rb2D.AddForce(horizontalMovement);
