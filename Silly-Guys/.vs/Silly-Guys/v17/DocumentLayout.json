@@ -1,0 +1,149 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|c:\\users\\mojow\\onedrive\\documents\\github\\silly-guys-jam\\silly-guys\\assets\\scripts\\respawnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\respawnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\assets\\scripts\\bulletcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bulletcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\assets\\scripts\\weaponscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weaponscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\assets\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\assets\\scripts\\meleecollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\meleecollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\assets\\scripts\\enemyscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\assets\\optionsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\optionsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OptionsMenu.cs",
+              "DocumentMoniker": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\OptionsMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\OptionsMenu.cs",
+              "ToolTip": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\OptionsMenu.cs",
+              "RelativeToolTip": "Assets\\OptionsMenu.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T00:18:49.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RespawnHandler.cs",
+              "DocumentMoniker": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\RespawnHandler.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\RespawnHandler.cs",
+              "ToolTip": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\RespawnHandler.cs",
+              "RelativeToolTip": "Assets\\Scripts\\RespawnHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T23:14:38.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\MainMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenu.cs",
+              "ToolTip": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\MainMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MainMenu.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T22:56:55.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeaponScript.cs",
+              "DocumentMoniker": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\WeaponScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\WeaponScript.cs",
+              "ToolTip": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\WeaponScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\WeaponScript.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T22:30:45.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "bulletCollision.cs",
+              "DocumentMoniker": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\bulletCollision.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\bulletCollision.cs",
+              "ToolTip": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\bulletCollision.cs",
+              "RelativeToolTip": "Assets\\Scripts\\bulletCollision.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T18:57:17.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
+              "ToolTip": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAQwHMAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T18:56:59.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EnemyScript.cs",
+              "DocumentMoniker": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\EnemyScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyScript.cs",
+              "ToolTip": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\EnemyScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyScript.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T18:56:59.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MeleeCollision.cs",
+              "DocumentMoniker": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\MeleeCollision.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MeleeCollision.cs",
+              "ToolTip": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\MeleeCollision.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MeleeCollision.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T18:56:59.064Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
