@@ -16,6 +16,7 @@ public class EnemyScript : MonoBehaviour
     Rigidbody2D rb2D;
     float timer;
     public float JUMPINGMAX;
+    private AudioSource sillied;
     //Play the music
     //Detect when you use the toggle, ensures music isn’t played multiple times
     bool m_ToggleChange;
@@ -31,6 +32,7 @@ public class EnemyScript : MonoBehaviour
         this.timer = 0;
         canJump = true;
         this.rb2D = GetComponent<Rigidbody2D>();
+        sillied = GameObject.Find("Sillify Sound").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -138,6 +140,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (isSerious) { 
             isSerious = false;
+            sillied.Play();
             this.GetComponent<SpriteRenderer>().sprite = this.sillySprite;
             this.player.GetComponent<PlayerController>().increaseSillyAmounts(1);
         }
