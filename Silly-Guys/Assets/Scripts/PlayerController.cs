@@ -21,9 +21,6 @@ public class PlayerController : MonoBehaviour
     public int silliesSaved;
     public GameObject deathScreen;
     public TextMeshProUGUI sillies;
-    float attackTimer;
-    const float MELEECOOLDOWN = 1f;
-    const float RANGEDCOOLDOWN = 1f;
     public GameObject meleeWeapon;
     public Transform firePoint;
     public GameObject bulletPref;
@@ -35,28 +32,32 @@ public class PlayerController : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         this.isLocked = false;
         this.deathScreen.SetActive(false);
-        attackTimer = 0f;
         this.meleeWeapon.SetActive(true);
         Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
+    void FixedUpdate()
+    {
+        if (!this.isLocked)
+        {
+            movementHandler();
+            //meleeHandler();
+        }
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R)) {
-            respawnHandler(); 
-        } 
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            respawnHandler();
+        }
         Boolean jumpKey = (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow));
         if (jumpKey && !isInAir)
         {
             rb2D.AddForce(new Vector2(0f, jumpHeight * 100));
             this.gameObject.GetComponent<AudioSource>().Play();
             isInAir = true;
-        }
-        if (!this.isLocked)
-        {
-            movementHandler();
-            //meleeHandler();
         }
     }
 
@@ -75,7 +76,7 @@ public class PlayerController : MonoBehaviour
     //handles movement inputs and redirects for resistances
     private void movementHandler() 
     {
-        Vector2 horizontalMovement = new Vector2(movementSpeed * Time.deltaTime * 50, 0f);
+        Vector2 horizontalMovement = new Vector2(movementSpeed * Time.fixedDeltaTime * 50, 0f);
         if ((Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && maxMovement > rb2D.totalForce.x)
         {
             rb2D.AddForce(horizontalMovement);
@@ -91,50 +92,9 @@ public class PlayerController : MonoBehaviour
             rb2D.AddForce(resistanceHandler());
         }
     }
-
-    //handles melee hits
-    private void meleeHandler() {
-        if (this.attackTimer == 0 && Input.GetKeyDown(KeyCode.S))
-        {
-            this.attackTimer = MELEECOOLDOWN;
-            this.meleeWeapon.SetActive(true);
-        }
-        else if (this.attackTimer - Time.deltaTime < 0)
-        {
-            this.attackTimer = 0;
-        }
-        else { 
-            this.attackTimer -= Time.deltaTime;
-        }
-        if (this.attackTimer < MELEECOOLDOWN / 3) {
-            this.meleeWeapon.SetActive(false);
-        }
-
-    }
-    //handles ranged weapon
-    private void rangedHandler()
-    {
-        if (this.attackTimer == 0 && Input.GetButtonDown("Fire1"))
-        {
-            this.attackTimer = RANGEDCOOLDOWN;
-            Instantiate(bulletPref, firePoint.position, firePoint.rotation);
-        }
-        else if (this.attackTimer - Time.deltaTime < 0)
-        {
-            this.attackTimer = 0;
-        }
-        else
-        {
-            this.attackTimer -= Time.deltaTime;
-        }
-        if (this.attackTimer < RANGEDCOOLDOWN / 3)
-        {
-            this.meleeWeapon.SetActive(false);
-        }
-    }
     //handles the resistance calculations based on the force of this object
     private Vector2 resistanceHandler() {
-        int RESISTANCE = 30;
+        float RESISTANCE = 300 * Time.fixedDeltaTime * 50;
         Vector2 dir;
         if (rb2D.totalForce.x > 0)
         {
