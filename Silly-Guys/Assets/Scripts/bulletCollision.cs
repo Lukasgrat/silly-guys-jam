@@ -28,7 +28,10 @@ public class bulletCollision : MonoBehaviour
         {
             collision.gameObject.GetComponent<EnemyScript>().sillyHandler();
         }
-        destroySound.GetComponent<AudioSource>().Play();
-        Destroy(gameObject);
+        else if (!collision.gameObject.tag.Equals("Player") && !collision.gameObject.tag.Equals("Respawn"))
+        {
+            destroySound.GetComponent<AudioSource>().Play();
+            Destroy(gameObject);
+        }
     }
 }

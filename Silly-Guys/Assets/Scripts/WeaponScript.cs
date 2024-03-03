@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WeaponScript : MonoBehaviour
 {
+    public GameObject player;
     public Transform firePoint;
     public GameObject bulletPref;
     public AudioSource shootingSound;
@@ -16,7 +17,7 @@ public class WeaponScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetButtonDown("Fire1") && !player.GetComponent<PlayerController>().isLocked) {
             Shoot();
         }
     }

@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2D;
     private Boolean isInAir;
-    bool isLocked;
+    public bool isLocked;
     [Header("Movement Values")]
     public float jumpHeight;
     public float movementSpeed;
@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletPref;
     public GameObject respawn;
     // Start is called before the first frame update
+
     void Start()
     {
         isInAir = false;
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
             respawnHandler();
         }
         Boolean jumpKey = (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow));
-        if (jumpKey && !isInAir)
+        if (jumpKey && !isInAir && !this.isLocked)
         {
             rb2D.AddForce(new Vector2(0f, jumpHeight * 100));
             this.gameObject.GetComponent<AudioSource>().Play();
@@ -148,5 +149,6 @@ public class PlayerController : MonoBehaviour
         this.deathScreen.SetActive(true);
         this.gameObject.GetComponent<SpriteRenderer>().color = Color.gray;
         this.isLocked = true;
+        
     }
 }

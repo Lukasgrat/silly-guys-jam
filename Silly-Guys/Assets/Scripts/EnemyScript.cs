@@ -45,7 +45,7 @@ public class EnemyScript : MonoBehaviour
     public void seriousAI()
     {
         Vector3 currentPos = transform.position;
-        if (Vector3.Distance(player.transform.position, currentPos) < attackRadius)
+        if (Vector3.Distance(player.transform.position, currentPos) < attackRadius && !player.GetComponent<PlayerController>().isLocked)
         {
             Debug.Log(canJump);
             if (canJump)
@@ -138,7 +138,7 @@ public class EnemyScript : MonoBehaviour
     }
     public void sillyHandler()
     {
-        if (isSerious) { 
+        if (isSerious) {
             isSerious = false;
             sillied.Play();
             this.GetComponent<SpriteRenderer>().sprite = this.sillySprite;
