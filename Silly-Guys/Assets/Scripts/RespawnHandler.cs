@@ -8,7 +8,7 @@ public class RespawnHandler : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Player")) 
         {
-            collision.gameObject.GetComponent<PlayerController>().respawn = this.gameObject;
+            collision.gameObject.GetComponent<PlayerController>().respawn = this;
         }
     }
 }

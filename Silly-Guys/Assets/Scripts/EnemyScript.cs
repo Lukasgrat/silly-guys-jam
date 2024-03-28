@@ -1,38 +1,63 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.UIElements;
 
 public class EnemyScript : MonoBehaviour
 {
-    public GameObject player;
-    public float attackRadius;
-    public float moveSpeed;
-    public Boolean isSerious;
-    public Boolean isJumping;
-    public Sprite sillySprite;
-    AudioSource m_MyAudioSource;
-    Rigidbody2D rb2D;
-    float timer;
-    public float JUMPINGMAX;
-    private AudioSource sillied;
+    [SerializeField]
+    internal PlayerController player;
+    [SerializeField]
+    internal float attackRadius;
+    [SerializeField]
+    internal float moveSpeed;
+    [SerializeField]
+    internal Boolean isSerious;
+    [SerializeField]
+    internal Boolean isJumping;
+    [SerializeField]
+    internal Sprite sillySprite;
+    internal AudioSource m_MyAudioSource;
+    internal Rigidbody2D rb2D;
+    internal float timer = 0;
+    [SerializeField]
+    internal float JUMPINGMAX;
+    internal AudioSource sillied;
+    [SerializeField]
+    internal SpriteRenderer textBubble;
+    [SerializeField]
+    internal TextMeshPro text;
+    [SerializeField]
+    internal String serious;
+    [SerializeField]
+    internal String sillyText;
+    [SerializeField]
+    internal float FADETIME = 2f;
+    internal float fadeTimer;
+    [SerializeField]
+    internal bool hasSpeechBubble;
     //Play the music
     //Detect when you use the toggle, ensures music isn’t played multiple times
-    bool m_ToggleChange;
-    bool canJump;
+    //Ensure the toggle is set to true for the music to play at start-up
+    internal bool m_ToggleChange = true;
+    internal bool canJump = true;
 
     // Start is called before the first frame update
     void Start()
     {
         //Fetch the AudioSource from the GameObject
         m_MyAudioSource = GetComponent<AudioSource>();
-        //Ensure the toggle is set to true for the music to play at start-up
-        this.m_ToggleChange = true;
-        this.timer = 0;
-        canJump = true;
         this.rb2D = GetComponent<Rigidbody2D>();
         sillied = GameObject.Find("Sillify Sound").GetComponent<AudioSource>();
+        if (hasSpeechBubble)
+        {
+            textBubble.gameObject.SetActive(false);
+            text.text = serious;
+            fadeTimer = 0f;
+        }
     }
 
     // Update is called once per frame
@@ -41,13 +66,51 @@ public class EnemyScript : MonoBehaviour
         if (isSerious) {
             seriousAI();
         }
+        if (hasSpeechBubble)
+        {
+            textHandler();
+        }
     }
-    public void seriousAI()
+
+    internal void textHandler()
     {
         Vector3 currentPos = transform.position;
-        if (Vector3.Distance(player.transform.position, currentPos) < attackRadius && !player.GetComponent<PlayerController>().isLocked)
+        if (Vector3.Distance(player.transform.position, currentPos) < attackRadius
+            && !player.GetComponent<PlayerController>().isLocked)
         {
-            Debug.Log(canJump);
+            this.textBubble.gameObject.SetActive(true);
+            Color color = this.textBubble.color;
+            float startOpacity = color.a;
+
+            if (this.fadeTimer == this.FADETIME)
+            {
+                return;
+            }
+            else if (this.fadeTimer + Time.deltaTime >= this.FADETIME)
+            {
+                this.fadeTimer = this.FADETIME;
+            }
+            else
+            {
+                this.fadeTimer += Time.deltaTime;
+            }
+            float blend = Mathf.Clamp01(this.fadeTimer / this.FADETIME);
+            color.a = blend;
+            this.textBubble.color = color;
+        }
+        else 
+        {
+            this.textBubble.gameObject.SetActive(false);
+            fadeTimer = 0f;
+        }
+    }
+
+    internal void seriousAI()
+    {
+        Vector3 currentPos = transform.position;
+        if (Vector3.Distance(player.transform.position, currentPos) < attackRadius 
+            && !player.GetComponent<PlayerController>().isLocked)
+        {
             if (canJump)
             {
                 choosingJumpHandler();
@@ -61,13 +124,14 @@ public class EnemyScript : MonoBehaviour
                 jumpingHandler();
             }
             audioHandler();
+
         }
         else 
         {
             m_ToggleChange = true;
         }
     }
-    private void choosingJumpHandler()
+    internal void choosingJumpHandler()
     {
         Vector3 currentPos = transform.position;
         if (player.transform.position.x > currentPos.x)
@@ -80,6 +144,8 @@ public class EnemyScript : MonoBehaviour
             transform.localScale = new Vector3(-1 * Mathf.Abs(this.transform.localScale.x),
                 this.transform.localScale.y,
                 this.transform.localScale.z);
+            Vector3 textScale = this.text.gameObject.transform.localScale;
+            this.text.gameObject.transform.localScale = new Vector3(Mathf.Abs(textScale.x) * -1, textScale.y, textScale.z);
         }
         else if (player.transform.position.x < currentPos.x)
         {
@@ -91,9 +157,11 @@ public class EnemyScript : MonoBehaviour
             transform.localScale = new Vector3(Mathf.Abs(this.transform.localScale.x),
                 this.transform.localScale.y,
                 this.transform.localScale.z);
+            Vector3 textScale = this.text.gameObject.transform.localScale;
+            this.text.gameObject.transform.localScale = new Vector3(Mathf.Abs(textScale.x), textScale.y, textScale.z);
         }
     }
-    private void forcedJumpHandler()
+    internal void forcedJumpHandler()
     {
         Vector3 currentPos = transform.position;
         if (this.transform.localScale.x < 0)
@@ -113,7 +181,7 @@ public class EnemyScript : MonoBehaviour
                     );
         }
     }
-    private void jumpingHandler() 
+    internal void jumpingHandler() 
     {
         if (this.timer == 0 && canJump)
         {
@@ -127,7 +195,7 @@ public class EnemyScript : MonoBehaviour
         }
         else { this.timer -= Time.deltaTime; }
     }
-    private void audioHandler()
+    internal void audioHandler()
     {
         //Check to see if you just set the toggle to positive
         if (!m_MyAudioSource.isPlaying && m_ToggleChange)
@@ -136,12 +204,17 @@ public class EnemyScript : MonoBehaviour
             m_ToggleChange = false;
         }
     }
-    public void sillyHandler()
+    public virtual void sillyHandler()
     {
         if (isSerious) {
             isSerious = false;
+            if (this.hasSpeechBubble)
+            {
+                this.text.text = this.sillyText;
+            }
             sillied.Play();
             this.GetComponent<SpriteRenderer>().sprite = this.sillySprite;
+            Debug.Log("here");
             this.player.GetComponent<PlayerController>().increaseSillyAmounts(1);
         }
     }

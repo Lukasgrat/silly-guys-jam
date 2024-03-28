@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public GameObject meleeWeapon;
     public Transform firePoint;
     public GameObject bulletPref;
-    public GameObject respawn;
+    public RespawnHandler respawn;
     // Start is called before the first frame update
 
     void Start()
@@ -73,6 +73,10 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    public void lockMovement(bool shouldLock) 
+    {
+        this.isLocked = shouldLock;
+    }
     //EFFECT: adds force to the player
     //handles movement inputs and redirects for resistances
     private void movementHandler() 
