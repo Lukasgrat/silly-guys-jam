@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.ConstrainedExecution;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPref;
     public RespawnHandler respawn;
+    private BoxCollider2D _col;
     // Start is called before the first frame update
 
     void Start()
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
         this.deathScreen.SetActive(false);
         this.meleeWeapon.SetActive(true);
         Application.targetFrameRate = 60;
+        this._col = this.GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -53,12 +56,21 @@ public class PlayerController : MonoBehaviour
         {
             respawnHandler();
         }
+
+        isInAir = true;
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(this.transform.position, _col.bounds.extents, 0, Vector2.down, _col.bounds.extents.y + .025f);
+        foreach (RaycastHit2D hit in hits) 
+        {
+            if (hit.collider != null && !hit.collider.isTrigger) 
+            {
+                isInAir = false;
+            }
+        }
         Boolean jumpKey = (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow));
         if (jumpKey && !isInAir && !this.isLocked)
         {
             rb2D.AddForce(new Vector2(0f, jumpHeight * 100));
             this.gameObject.GetComponent<AudioSource>().Play();
-            isInAir = true;
         }
     }
 
@@ -131,9 +143,6 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.contacts[0].point.y < this.transform.position.y - .01 && isInAir) {
-            isInAir = false;
-        }
         if (collision.gameObject.tag.Equals("Enemy") && collision.gameObject.GetComponent<EnemyScript>().isSerious) 
         {
             death();

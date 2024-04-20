@@ -32,7 +32,6 @@ public class bulletCollision : MonoBehaviour
         }
         else 
         {
-            Debug.Log("here");
             timer -= Time.deltaTime;
         }
         
