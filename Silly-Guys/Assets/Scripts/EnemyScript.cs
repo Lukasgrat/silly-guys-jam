@@ -52,6 +52,11 @@ public class EnemyScript : MonoBehaviour
         m_MyAudioSource = GetComponent<AudioSource>();
         this.rb2D = GetComponent<Rigidbody2D>();
         sillied = GameObject.Find("Sillify Sound").GetComponent<AudioSource>();
+
+        if (this.textBubble != null)
+        {
+            textBubble.gameObject.SetActive(false);
+        }
         if (hasSpeechBubble)
         {
             textBubble.gameObject.SetActive(false);

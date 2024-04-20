@@ -7,6 +7,7 @@ public class bulletCollision : MonoBehaviour
     public float speed;
     public Rigidbody2D rb2d;
     GameObject destroySound;
+    float timer = 1.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,20 @@ public class bulletCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timer == 0)
+        {
+            destroySound.GetComponent<AudioSource>().Play();
+            Destroy(gameObject);
+        }
+        else if (timer < Time.deltaTime)
+        {
+            timer = 0;
+        }
+        else 
+        {
+            Debug.Log("here");
+            timer -= Time.deltaTime;
+        }
         
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,6 +42,10 @@ public class bulletCollision : MonoBehaviour
         if (collision.gameObject.tag.Equals("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyScript>().sillyHandler();
+        }
+        else if (collision.gameObject.tag.Equals("Boss"))
+        {
+            collision.gameObject.GetComponent<EnemyBoss>().sillyHandler();
         }
         else if (!collision.gameObject.tag.Equals("Player") && !collision.gameObject.tag.Equals("Respawn"))
         {

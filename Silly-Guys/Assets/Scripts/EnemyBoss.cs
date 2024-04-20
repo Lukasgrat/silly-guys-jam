@@ -39,6 +39,8 @@ public class EnemyBoss : EnemyScript
             this.GetComponent<SpriteRenderer>().sprite = this.sillySprite;
             this.player.GetComponent<PlayerController>().increaseSillyAmounts(1);
             this.player.lockMovement(true);
+            this.nextLevelScreen.SetActive(true);
+            Debug.Log("here");
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
