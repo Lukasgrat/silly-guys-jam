@@ -26,8 +26,13 @@ public class EnemyBoss : EnemyScript
     void Update()
     {
         if (isSerious) {
-            seriousAI();
-        }
+            Vector3 currentPos = transform.position;
+            if (Vector3.Distance(player.transform.position, currentPos) < attackRadius
+                && !player.GetComponent<PlayerController>().isLocked)
+            {
+                audioHandler();
+            }
+    }
     }
 
 
@@ -40,7 +45,6 @@ public class EnemyBoss : EnemyScript
             this.player.GetComponent<PlayerController>().increaseSillyAmounts(1);
             this.player.lockMovement(true);
             this.nextLevelScreen.SetActive(true);
-            Debug.Log("here");
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

@@ -110,7 +110,7 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    internal void seriousAI()
+    private void seriousAI()
     {
         Vector3 currentPos = transform.position;
         if (Vector3.Distance(player.transform.position, currentPos) < attackRadius 
@@ -139,32 +139,21 @@ public class EnemyScript : MonoBehaviour
     internal void choosingJumpHandler()
     {
         Vector3 currentPos = transform.position;
-        if (player.transform.position.x > currentPos.x)
+        int scaler = 1;
+        if (player.transform.position.x > currentPos.x) 
         {
-            transform.position = new Vector3(
-                currentPos.x + moveSpeed * Time.deltaTime,
-                currentPos.y,
-                currentPos.z
-                );
-            transform.localScale = new Vector3(-1 * Mathf.Abs(this.transform.localScale.x),
-                this.transform.localScale.y,
-                this.transform.localScale.z);
-            Vector3 textScale = this.text.gameObject.transform.localScale;
-            this.text.gameObject.transform.localScale = new Vector3(Mathf.Abs(textScale.x) * -1, textScale.y, textScale.z);
+            scaler = -1;
         }
-        else if (player.transform.position.x < currentPos.x)
-        {
-            transform.position = new Vector3(
-                    currentPos.x - moveSpeed * Time.deltaTime,
-                    currentPos.y,
-                    currentPos.z
-                    );
-            transform.localScale = new Vector3(Mathf.Abs(this.transform.localScale.x),
-                this.transform.localScale.y,
-                this.transform.localScale.z);
-            Vector3 textScale = this.text.gameObject.transform.localScale;
-            this.text.gameObject.transform.localScale = new Vector3(Mathf.Abs(textScale.x), textScale.y, textScale.z);
-        }
+        transform.position = new Vector3(
+               currentPos.x - moveSpeed * Time.deltaTime * scaler,
+               currentPos.y,
+               currentPos.z
+               );
+        transform.localScale = new Vector3(scaler * Mathf.Abs(this.transform.localScale.x),
+            this.transform.localScale.y,
+            this.transform.localScale.z);
+        Vector3 textScale = this.text.transform.localScale;
+        this.text.transform.localScale = new Vector3(Mathf.Abs(textScale.x) * scaler, textScale.y, textScale.z);
     }
     internal void forcedJumpHandler()
     {
@@ -219,7 +208,6 @@ public class EnemyScript : MonoBehaviour
             }
             sillied.Play();
             this.GetComponent<SpriteRenderer>().sprite = this.sillySprite;
-            Debug.Log("here");
             this.player.GetComponent<PlayerController>().increaseSillyAmounts(1);
         }
     }
