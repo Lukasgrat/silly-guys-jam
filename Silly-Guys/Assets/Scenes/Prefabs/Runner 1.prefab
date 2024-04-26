@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  attackRadius: 7
+  attackRadius: 15
   moveSpeed: 12
   isSerious: 1
   isJumping: 0

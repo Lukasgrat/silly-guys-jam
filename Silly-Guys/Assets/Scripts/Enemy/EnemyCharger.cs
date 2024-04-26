@@ -94,28 +94,32 @@ public class EnemyCharger : EnemyScript
         {
             scaler = -1;
         }
-        transform.position = new Vector3(
+        if (Vector3.Distance(player.transform.position, currentPos) < attackRadius
+            && !player.GetComponent<PlayerController>().isLocked)
+        {
+            transform.position = new Vector3(
                currentPos.x - moveSpeed * Time.deltaTime * scaler,
                currentPos.y,
                currentPos.z
                );
+            if (this.angerTimer == 0f)
+            {
+                this.sillify();
+            }
+            else if (this.angerTimer < Time.deltaTime)
+            {
+                this.angerTimer = 0f;
+            }
+            else
+            {
+                this.angerTimer -= Time.deltaTime;
+            }
+        }
         transform.localScale = new Vector3(scaler * Mathf.Abs(this.transform.localScale.x),
             this.transform.localScale.y,
             this.transform.localScale.z);
         Vector3 textScale = this.text.transform.localScale;
         this.text.transform.localScale = new Vector3(Mathf.Abs(textScale.x) * scaler, textScale.y, textScale.z);
-        if (this.angerTimer == 0f)
-        {
-            this.sillify();
-        }
-        else if (this.angerTimer < Time.deltaTime)
-        {
-            this.angerTimer = 0f;
-        }
-        else 
-        {
-            this.angerTimer -= Time.deltaTime;
-        }
     }
 
     public override void sillyHandler()
