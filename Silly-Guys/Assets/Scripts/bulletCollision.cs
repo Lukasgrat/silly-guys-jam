@@ -40,6 +40,11 @@ public class bulletCollision : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Enemy"))
         {
+            if (collision.gameObject.GetComponent<EnemyScript>().isSerious)
+            {
+                Destroy(gameObject);
+            }
+
             collision.gameObject.GetComponent<EnemyScript>().sillyHandler();
         }
         else if (collision.gameObject.tag.Equals("Boss"))
