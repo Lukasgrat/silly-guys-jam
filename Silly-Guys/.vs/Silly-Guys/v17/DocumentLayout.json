@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|c:\\users\\mojow\\onedrive\\documents\\github\\silly-guys-jam\\silly-guys\\assets\\scripts\\pausemenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pausemenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\assets\\scripts\\mainmenumod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenumod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|c:\\users\\mojow\\onedrive\\documents\\github\\silly-guys-jam\\silly-guys\\assets\\scripts\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\assets\\scripts\\weaponscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weaponscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE4D836D-B95E-7202-BA24-979121B851FF}|Assembly-CSharp.csproj|C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\assets\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,11 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainMenuMod.cs",
               "DocumentMoniker": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\MainMenuMod.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenuMod.cs",
@@ -65,15 +65,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MenuController.cs",
-              "DocumentMoniker": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\MenuController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MenuController.cs",
-              "ToolTip": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\MenuController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MenuController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAMAAAA",
+              "Title": "PauseMenuController.cs",
+              "DocumentMoniker": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\PauseMenuController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PauseMenuController.cs",
+              "ToolTip": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\PauseMenuController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PauseMenuController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T05:49:12.142Z",
-              "IsPinned": true,
+              "WhenOpened": "2024-05-02T22:55:42.905Z",
               "EditorCaption": ""
             },
             {
@@ -126,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "WeaponScript.cs",
               "DocumentMoniker": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\WeaponScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WeaponScript.cs",
@@ -134,8 +133,7 @@
               "RelativeToolTip": "Assets\\Scripts\\WeaponScript.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-19T22:30:45.314Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-19T22:30:45.314Z"
             },
             {
               "$type": "Document",
@@ -151,13 +149,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
               "ToolTip": "C:\\Users\\mojow\\OneDrive\\Documents\\GitHub\\silly-guys-jam\\Silly-Guys\\Assets\\Scripts\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAIwC0AAAAbAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAowEgAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-17T18:56:59.058Z",
               "EditorCaption": ""
