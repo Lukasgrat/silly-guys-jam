@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class NextLevelScript : MonoBehaviour
 {
+    [SerializeField]
+    private int nextSceneID;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class NextLevelScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(nextSceneID);
         }
     }
 }

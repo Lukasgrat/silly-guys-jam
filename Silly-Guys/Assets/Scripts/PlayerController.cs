@@ -27,6 +27,12 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletPref;
     public RespawnHandler respawn;
     private BoxCollider2D _col;
+    [SerializeField]
+    private Sprite jumpingSprite;
+    [SerializeField]
+    private Sprite walkingSprite;
+    [SerializeField]
+    private Sprite standardSprite;
     // Start is called before the first frame update
 
     void Start()
@@ -94,23 +100,36 @@ public class PlayerController : MonoBehaviour
     }
     //EFFECT: adds force to the player
     //handles movement inputs and redirects for resistances
-    private void movementHandler() 
+    private void movementHandler()
     {
         Vector2 horizontalMovement = new Vector2(movementSpeed * Time.fixedDeltaTime * 50, 0f);
         if ((Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && maxMovement > rb2D.totalForce.x)
         {
             rb2D.AddForce(horizontalMovement);
             this.transform.localScale = new Vector3(Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y, 1);
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = this.walkingSprite;
         }
         else if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && maxMovement * -1 < rb2D.totalForce.x)
         {
             rb2D.AddForce(horizontalMovement * -1);
             this.transform.localScale = new Vector3(Mathf.Abs(this.transform.localScale.x) * -1, this.transform.localScale.y, 1);
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = this.walkingSprite;
         }
         else
         {
             rb2D.AddForce(resistanceHandler());
         }
+        if (!(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = this.standardSprite;
+        }
+        if (this.isInAir)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = this.jumpingSprite;
+        }
+
+
+
     }
     //handles the resistance calculations based on the force of this object
     private Vector2 resistanceHandler() {

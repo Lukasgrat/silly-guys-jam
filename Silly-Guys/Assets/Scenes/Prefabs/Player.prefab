@@ -116,6 +116,9 @@ MonoBehaviour:
   firePoint: {fileID: 9139104718733721605}
   bulletPref: {fileID: 5563053979217018610, guid: 9b61913e665ec8940ae812341eb7787a, type: 3}
   respawn: {fileID: 0}
+  jumpingSprite: {fileID: 21300000, guid: 0eeaa5abedab69b4f85153c72835c9d3, type: 3}
+  walkingSprite: {fileID: 21300000, guid: 6987ff7f9f78634438fd28ad0e1ee86b, type: 3}
+  standardSprite: {fileID: 21300000, guid: f49c228adb7f0ce4182258fb94a99639, type: 3}
 --- !u!50 &5205167252593243323
 Rigidbody2D:
   serializedVersion: 4
@@ -203,7 +206,6 @@ MonoBehaviour:
   player: {fileID: 415827737515817102}
   firePoint: {fileID: 9139104718733721605}
   bulletPref: {fileID: 5563053979217018610, guid: 9b61913e665ec8940ae812341eb7787a, type: 3}
-  shootingSound: {fileID: 0}
 --- !u!114 &-5922457848190751506
 MonoBehaviour:
   m_ObjectHideFlags: 0
