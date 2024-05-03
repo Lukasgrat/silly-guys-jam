@@ -16,7 +16,7 @@ public class BackGroundMovement : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 vec3 = transform.position;
-        Vector3 playerForce = controller.GetComponent<Rigidbody2D>().velocity /150;
+        Vector3 playerForce = controller.GetComponent<Rigidbody2D>().velocity / 150;
         this.transform.position = new Vector3(playerForce.x + vec3.x, vec3.y, vec3.z);
     }
 }
