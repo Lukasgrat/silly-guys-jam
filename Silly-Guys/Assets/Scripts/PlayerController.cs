@@ -70,7 +70,8 @@ public class PlayerController : MonoBehaviour
         if (jumpKey && !isInAir && !this.isLocked)
         {
             rb2D.AddForce(new Vector2(0f, jumpHeight * 100));
-            this.gameObject.GetComponent<AudioSource>().Play();
+            //this.gameObject.GetComponent<AudioSource>().Play();
+            AudioController.Instance.PlaySfx("Jump");
         }
     }
 

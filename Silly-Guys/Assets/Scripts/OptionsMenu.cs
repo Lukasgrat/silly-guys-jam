@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
-    public AudioMixer mixer;
-
+    [SerializeField] Slider audioSlider;
     public void setVolume(float volume)
     {
-        mixer.SetFloat("volume", volume);
+       AudioController.Instance.volume(audioSlider.value);
     }
 }

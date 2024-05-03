@@ -129,7 +129,6 @@ public class EnemyScript : MonoBehaviour
                 jumpingHandler();
             }
             audioHandler();
-
         }
         else 
         {
@@ -192,9 +191,14 @@ public class EnemyScript : MonoBehaviour
     internal void audioHandler()
     {
         //Check to see if you just set the toggle to positive
-        if (!m_MyAudioSource.isPlaying && m_ToggleChange)
+        //if (!m_MyAudioSource.isPlaying && m_ToggleChange)
+        //{
+        //    m_MyAudioSource.Play();
+        //    m_ToggleChange = false;
+        //}
+        if (!AudioController.Instance.sfxSource.isPlaying)
         {
-            m_MyAudioSource.Play();
+            AudioController.Instance.PlaySfx("ChargerSound");
             m_ToggleChange = false;
         }
     }
