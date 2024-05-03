@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
+        isLocked = false;
         isInAir = false;
         rb2D = GetComponent<Rigidbody2D>();
         this.isLocked = false;
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
         this.meleeWeapon.SetActive(true);
         Application.targetFrameRate = 60;
         this._col = this.GetComponent<BoxCollider2D>();
+        AudioController.Instance.PlayMusic("Music");
     }
 
     // Update is called once per frame
@@ -66,11 +69,10 @@ public class PlayerController : MonoBehaviour
                 isInAir = false;
             }
         }
-        Boolean jumpKey = (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow));
+        bool jumpKey = (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow));
         if (jumpKey && !isInAir && !this.isLocked)
         {
             rb2D.AddForce(new Vector2(0f, jumpHeight * 100));
-            //this.gameObject.GetComponent<AudioSource>().Play();
             AudioController.Instance.PlaySfx("Jump");
         }
     }
@@ -163,6 +165,5 @@ public class PlayerController : MonoBehaviour
         this.deathScreen.SetActive(true);
         this.gameObject.GetComponent<SpriteRenderer>().color = Color.gray;
         this.isLocked = true;
-        
     }
 }

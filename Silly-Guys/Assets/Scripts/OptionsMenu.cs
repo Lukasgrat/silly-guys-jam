@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
@@ -7,6 +6,6 @@ public class OptionsMenu : MonoBehaviour
     [SerializeField] Slider audioSlider;
     public void setVolume(float volume)
     {
-       AudioController.Instance.volume(audioSlider.value);
+        AudioController.Instance.volume(audioSlider.value);
     }
 }

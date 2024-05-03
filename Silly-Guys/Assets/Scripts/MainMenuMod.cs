@@ -22,6 +22,6 @@ public class MainMenuMod : MonoBehaviour
 
     public void quitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 }

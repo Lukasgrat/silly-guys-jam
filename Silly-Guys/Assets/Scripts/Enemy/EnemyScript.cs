@@ -15,9 +15,9 @@ public class EnemyScript : MonoBehaviour
     [SerializeField]
     internal float moveSpeed;
     [SerializeField]
-    internal Boolean isSerious;
+    internal bool isSerious;
     [SerializeField]
-    internal Boolean isJumping;
+    internal bool isJumping;
     [SerializeField]
     internal Sprite sillySprite;
     internal AudioSource m_MyAudioSource;
@@ -25,15 +25,15 @@ public class EnemyScript : MonoBehaviour
     internal float timer = 0;
     [SerializeField]
     internal float JUMPINGMAX;
-    internal AudioSource sillied;
+    //internal AudioSource sillied;
     [SerializeField]
     internal SpriteRenderer textBubble;
     [SerializeField]
     internal TextMeshPro text;
     [SerializeField]
-    internal String serious;
+    internal string serious;
     [SerializeField]
-    internal String sillyText;
+    internal string sillyText;
     [SerializeField]
     internal float FADETIME = 2f;
     internal float fadeTimer;
@@ -49,9 +49,9 @@ public class EnemyScript : MonoBehaviour
     void Start()
     {
         //Fetch the AudioSource from the GameObject
-        m_MyAudioSource = GetComponent<AudioSource>();
+        //m_MyAudioSource = GetComponent<AudioSource>();
         this.rb2D = GetComponent<Rigidbody2D>();
-        sillied = GameObject.Find("Sillify Sound").GetComponent<AudioSource>();
+        //sillied = GameObject.Find("Sillify Sound").GetComponent<AudioSource>();
 
         if (this.textBubble != null)
         {
@@ -196,9 +196,9 @@ public class EnemyScript : MonoBehaviour
         //    m_MyAudioSource.Play();
         //    m_ToggleChange = false;
         //}
-        if (!AudioController.Instance.sfxSource.isPlaying)
+        if (!AudioController.Instance.sfxSource.isPlaying && m_ToggleChange)
         {
-            AudioController.Instance.PlaySfx("ChargerSound");
+            AudioController.Instance.PlaySfx("Charger");
             m_ToggleChange = false;
         }
     }
@@ -210,7 +210,7 @@ public class EnemyScript : MonoBehaviour
             {
                 this.text.text = this.sillyText;
             }
-            sillied.Play();
+            AudioController.Instance.PlaySfx("Sillify");
             this.GetComponent<SpriteRenderer>().sprite = this.sillySprite;
             this.player.GetComponent<PlayerController>().increaseSillyAmounts(1);
         }

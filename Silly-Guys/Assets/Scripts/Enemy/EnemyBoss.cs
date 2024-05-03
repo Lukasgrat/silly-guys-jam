@@ -12,10 +12,10 @@ public class EnemyBoss : EnemyScript
     void Start()
     {
         //Fetch the AudioSource from the GameObject
-        m_MyAudioSource = GetComponent<AudioSource>();
+        //m_MyAudioSource = GetComponent<AudioSource>();
         //Ensure the toggle is set to true for the music to play at start-up
         this.rb2D = GetComponent<Rigidbody2D>();
-        sillied = GameObject.Find("Sillify Sound").GetComponent<AudioSource>();
+        //sillied = GameObject.Find("Sillify Sound").GetComponent<AudioSource>();
         if (this.hasSpeechBubble)
         {
             text.text = serious;
@@ -40,7 +40,8 @@ public class EnemyBoss : EnemyScript
     {
         if (isSerious) {
             isSerious = false;
-            sillied.Play();
+            //sillied.Play();
+            AudioController.Instance.PlaySfx("Sillify");
             this.GetComponent<SpriteRenderer>().sprite = this.sillySprite;
             this.player.GetComponent<PlayerController>().increaseSillyAmounts(1);
             this.player.lockMovement(true);

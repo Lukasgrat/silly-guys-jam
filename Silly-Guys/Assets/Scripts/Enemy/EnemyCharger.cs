@@ -13,9 +13,9 @@ public class EnemyCharger : EnemyScript
     void Start()
     {
         //Fetch the AudioSource from the GameObject
-        m_MyAudioSource = GetComponent<AudioSource>();
+       // m_MyAudioSource = GetComponent<AudioSource>();
         this.rb2D = GetComponent<Rigidbody2D>();
-        sillied = GameObject.Find("Sillify Sound").GetComponent<AudioSource>();
+        //sillied = GameObject.Find("Sillify Sound").GetComponent<AudioSource>();
 
         if (this.textBubble != null)
         {
@@ -135,7 +135,7 @@ public class EnemyCharger : EnemyScript
             {
                 this.text.text = this.sillyText;
             }
-            sillied.Play();
+            AudioController.Instance.PlaySfx("Sillify");
             this.GetComponent<SpriteRenderer>().sprite = this.sillySprite;
             this.player.GetComponent<PlayerController>().increaseSillyAmounts(1);
         }

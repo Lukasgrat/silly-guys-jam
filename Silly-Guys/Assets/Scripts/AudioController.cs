@@ -20,6 +20,7 @@ public class AudioController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     public void PlayMusic(string name)
     {
         AudioClip a = Array.Find(sounds, x => x.name == name);
