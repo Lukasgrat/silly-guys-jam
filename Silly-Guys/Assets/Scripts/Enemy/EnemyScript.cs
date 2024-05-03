@@ -114,7 +114,7 @@ public class EnemyScript : MonoBehaviour
     {
         Vector3 currentPos = transform.position;
         if (Vector3.Distance(player.transform.position, currentPos) < attackRadius 
-            && !player.GetComponent<PlayerController>().isLocked)
+            && !player.GetComponent<PlayerController>().isLocked || (!canJump && isJumping))
         {
             if (canJump)
             {
@@ -178,7 +178,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (this.timer == 0 && canJump)
         {
-            rb2D.AddForce(new Vector2(0f, 900));
+            rb2D.AddForce(new Vector2(0f, 300));
             canJump = false;
             this.timer = JUMPINGMAX;
         }
